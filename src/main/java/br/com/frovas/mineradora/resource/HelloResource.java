@@ -2,6 +2,7 @@ package br.com.frovas.mineradora.resource;
 
 import br.com.frovas.mineradora.service.QuotationService;
 import jakarta.inject.Inject;
+import jakarta.transaction.Transactional;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
@@ -13,15 +14,16 @@ public class HelloResource {
 
 	@Inject
 	QuotationService quotationService;
-	
+
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/hello")
+	@Transactional
 	public Response hello() {
 
 		quotationService.getCurrencyPrice();
 
-		return Response.ok().entity("Ae daleeee!!").build();
+		return Response.ok().entity("Ae daleeee COTAÇÃO!!").build();
 	}
 
 }

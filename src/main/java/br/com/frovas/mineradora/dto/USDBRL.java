@@ -7,7 +7,7 @@ import lombok.extern.jackson.Jacksonized;
 
 @Jacksonized
 @Data
-@Builder
+//@Builder
 @AllArgsConstructor
 public class USDBRL {
 
